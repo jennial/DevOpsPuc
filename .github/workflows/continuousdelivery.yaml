@@ -1,0 +1,21 @@
+name: Continuous Delivery
+
+on:
+push:
+  branch:
+    - main 
+
+jobs:
+  continuous-delivery:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Continuous Delivery
+        uses: actions/upload-artifact@v4
+        with:
+          name: projetozip.zip
+          path: | 
+          '**.js'
