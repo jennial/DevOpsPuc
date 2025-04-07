@@ -36,6 +36,7 @@ class App extends Component {
   diminuir = () => {
     this.setState((prevState) => ({ valor: prevState.valor - 1 }));
     console.log(this.state.valor);
+    console.log(this.state.valor);
   };
 
   render() {
