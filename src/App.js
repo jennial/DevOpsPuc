@@ -37,6 +37,7 @@ class App extends Component {
     this.setState((prevState) => ({ valor: prevState.valor - 1 }));
     console.log(this.state.valor);
     console.log(this.state.valor);
+    
   };
 
   render() {
