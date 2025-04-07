@@ -1,9 +1,9 @@
 name: Continuous Delivery
 
 on:
-push:
-  branch:
-    - main 
+  push:
+    branches:
+      - main
 
 jobs:
   continuous-delivery:
@@ -13,9 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Continuous Delivery
+      - name: Continuous Delivery - Upload JS files
         uses: actions/upload-artifact@v4
         with:
-          name: projetozip.zip
-          path: | 
-          '**.js'
+          name: projetozip
+          path: '**/*.js'
