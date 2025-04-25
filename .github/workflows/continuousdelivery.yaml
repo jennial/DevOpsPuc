@@ -17,4 +17,22 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: projetozip
-          path: '**/*.js'
+          path: "**/*.js"
+
+  discord:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Send message to Discord
+        uses: johnnyhuy/actions-discord-git-webhook@main
+        with:
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
+          message: "Novo commit no repositório!"
+          color: 3066993
+          title: "Commit no repositório"
+          description: "Um novo commit foi feito no repositório."
+          author_name: "GitHub Actions"
+          author_icon: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+          footer_text: "GitHub Actions"
+          footer_icon: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
