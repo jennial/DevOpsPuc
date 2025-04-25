@@ -19,3 +19,13 @@ jobs:
           name: projetozip
           path: "**/*.js"
 
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Enviar mensagem para o Discord
+        uses: Ilshidur/action-discord@master
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        with:
+          args: "🚀 Novo commit feito na branch **main**!"
