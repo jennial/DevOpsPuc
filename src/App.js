@@ -22,7 +22,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10],
       operadores: null,
       valor: 0,
     };
