@@ -19,20 +19,11 @@ jobs:
           name: projetozip
           path: "**/*.js"
 
-  discord:
+  notify:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Send message to Discord
-        uses: Sniddl/discord-commits@1.6
+      - name: Enviar mensagem para o Discord
+        uses: Ilshidur/action-discord@master
         with:
-          webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
-          template: "avatar-with-link"
-          include-extras: true
-          message: "Novo commit no repositório!"
-          color: 3066993
-          title: "Commit no repositório"
-          description: "Um novo commit foi feito no repositório."
-          author_name: "GitHub Actions"
-          author_icon: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          message: "🚀 Novo commit feito na branch **main**!"
